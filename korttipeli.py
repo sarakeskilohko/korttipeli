@@ -35,5 +35,7 @@ def shuffle(deck):
 print(defineDeck())
 
 #tehdään metodi, joka ajetaan joka pelikierroksen välissä = jaetaan pelaajille kortti
-def deal (deck, players)   :
-    
+def deal (players, deck) -> dict:
+    onecard = {}
+    for i in players:
+        #yksi random kortti pakasta/hlö ja kortti poistetaan pakasta, kortit tallennetaan pelaajille erikseen
