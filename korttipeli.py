@@ -10,15 +10,11 @@ def allPlayers() -> list:
 
     return players
 
-
-players = allPlayers()
-print ("Players are:" + str(players))
-
 # luodaan korttipakka pelaamista varten
 def defineDeck() -> list:
     card = 1
     deck = []
-    for i in range(1, 14):
+    for card in range(1, 14):
         deck.append(('♤', card))
         deck.append(('❤', card))
         deck.append(('✠', card))
@@ -33,7 +29,6 @@ def defineDeck() -> list:
 def shuffle(deck):
      random.shuffle(deck)
      return deck
-print(defineDeck())
 
 #tehdään metodi, joka ajetaan joka pelikierroksen välissä = jaetaan pelaajille kortti
 def deal (players, deck) -> dict:
@@ -44,3 +39,6 @@ def deal (players, deck) -> dict:
         return onecard
 
 
+players = allPlayers()
+print ("Players are:" + str(players))
+print(defineDeck())
