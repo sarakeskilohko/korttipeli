@@ -10,8 +10,9 @@ def allPlayers() -> list:
 
     return players
 
-print ("Players are")
-allPlayers()
+
+players = allPlayers()
+print ("Players are:" + str(players))
 
 # luodaan korttipakka pelaamista varten
 def defineDeck() -> list:
@@ -38,4 +39,8 @@ print(defineDeck())
 def deal (players, deck) -> dict:
     onecard = {}
     for i in players:
-        #yksi random kortti pakasta/hlö ja kortti poistetaan pakasta, kortit tallennetaan pelaajille erikseen
+        onecard[i] = deck[0]
+        deck.remove(onecard[i])
+        return onecard
+
+
