@@ -51,29 +51,61 @@ def deal2 (players, deck) -> dict:
 
 def number1(deal1):
     card1 = deal1(players, deck)
+    list = card1.keys()
+    card = list[0]
     guess = int(input("Which number?"))
-    if guess == card1:
-        print("Give one drink!")
+    if guess == card:
+        print("Correct! Give one drink!")
         print("Card was: " + str(card1))
     else:
-        print("Drink one!")
+        print("Wrong, drink one!")
         print("Card was: " + str(card1))
 
 def number2(deal2):
     card2 = deal2(players, deck)
+    list = card2.keys()
+    card = list[0]
     guess = int(input("Which number?"))
-    if guess == card2:
-        print("Give one drink!")
+    if guess == card:
+        print("Correct! Give one drink!")
         print("Card was: " + str(card2))
     else:
-        print("Drink one!")
+        print("Wrong, drink one!")
         print("Card was: " + str(card2))
 
 
 def compare1(deal1):
     card = deal1(players, deck)
-    guess = int(input("Higher or lower?"))
-    if guess 
+    guess = str(input("Higher, lower or same?"))
+    if guess == 'higher' and card[0] < card[1]:
+        print("Correct! Give two drinks!")
+        print("Card was: " + str(card[1]))
+    elif guess == 'lower' and card[0] > card[1]:
+        print("Correct, give two drinks!")
+        print("Card was: " + str(card[1]))
+    elif guess == 'same' and card[0] == card[1]:
+        print("Correct, give two drinks!")
+        print("Card was: " + str(card[1]))
+    else:
+        print("Wrong, drink one!")
+        print("Card was: " + str(card[1]))
+
+def compare2(deal2):
+    card = deal2(players, deck)
+    guess = str(input("Higher, lower or same?"))
+    if guess == 'higher' and card[0] < card[1]:
+        print("Correct! Give two drinks!")
+        print("Card was: " + str(card[1]))
+    elif guess == 'lower' and card[0] > card[1]:
+        print("Correct, give two drinks!")
+        print("Card was: " + str(card[1]))
+    elif guess == 'same' and card[0] == card[1]:
+        print("Correct, give two drinks!")
+        print("Card was: " + str(card[1]))
+    else:
+        print("Wrong, drink one!")
+        print("Card was: " + str(card[1]))
+
 
 #print(defineDeck())
 players = allPlayers()
@@ -85,3 +117,6 @@ deck = defineDeck()
 #print(kortit2)
 number1(deal1)
 number2(deal2)
+print(str(deal1))
+#compare1(deal1)
+#compare2(deal2)
